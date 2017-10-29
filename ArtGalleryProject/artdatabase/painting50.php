@@ -1,4 +1,20 @@
+<?php
+include('artserver100.php');
+// echo "helloooooooo"."<br>";
+// echo $tanmay;
+// echo "helloooooooo";
+// $result=mysqli_query($db,"SELECT * from user");
+// // $data=mysqli_fetch_assoc($result);
+// // $abs = $data['image'];
+// // echo $abs;
+// // echo "<img src='../images/".$abs."' >";
+// while($data=mysqli_fetch_assoc($result)){
+//  $abs = $data['image'];
+// echo $abs;
+// echo "<img src='../images/".$abs."' >";
+// }
 
+?>
 
 <html lang="en">
 <head>
@@ -13,26 +29,37 @@
 
 <body style="background-color:    #F5F5DC;">
 <h1>Hey</h1>
-<h1><?php echo ("m".$row['artname']) ?></h1>
-<h1><?php echo $darshan ?></h1>
 <div class="container-fluid">
-  <h1>Browse Art for Sale by Style
+  <h1>Browse Art for Sale by Style</h1>
 <h4><p>See what's selling to collectors all over the world.</p></h4>
 
 </div>
 
 
 
-<div class="row" style="margin: 15px">
-      <div class="col-md-6">
-  <a target="_blank" href="art1.html">
-    <img src="<?php echo $ss; ?>;" alt="art1" width="600" height="380">
-     <div class="desc"><h3>$250</h3></div>
-  </a>
- 
+
+
+<div class="row" style="">
+
+<?php
+$result=mysqli_query($db,"SELECT * from user");
+// $data=mysqli_fetch_assoc($result);
+// $abs = $data['image'];
+// echo $abs;
+// echo "<img src='../images/".$abs."' >";
+while($data=mysqli_fetch_assoc($result)){
+ $abs = $data['image'];
+echo "<div class='col-lg-6'>";
+echo "<img src='../images/".$abs."' height=500px width=500px>";
+echo "<h1>".$data['artname']."   ".$data['cost']."<h1></div>";
+}
+
+?>
+
+
         
 </div>
-
+<!-- 
 <div class="col-md-4">
   <a target="_blank" href="art2.html">
     <img src="/images/art2.jpeg" alt="art1" width="600" height="380">
@@ -128,26 +155,22 @@
      <br>  <br><br>
 
 </div>
-<div>
+<div> -->
   <?php
-  $db=mysqli_connect("localhost","root","","artdatabase");
-  $query="SELECT * FROM user  ";
-  $result=mysqli_query($db,$query);
-  while($row = mysqli_fetch_assoc($result)){
-    echo $row["artname"].$row["cost"].$row["category"];
-  }
+  // $db=mysqli_connect("localhost","root","","artdatabase");
+  // $query="SELECT * FROM user  ";
+  // $result=mysqli_query($db,$query);
+  // while($row = mysqli_fetch_assoc($result)){
+  //   echo $row["artname"].$row["cost"].$row["category"];
+  // }
 
   ?>
-</div>
 
 
 
 
 
 
-
-
-</div>
 
 </div>
 </body>	

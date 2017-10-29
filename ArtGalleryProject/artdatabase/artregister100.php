@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Registration system PHP and MySQL</title>
-	<link rel="stylesheet" type="text/css" href="stylemodify.css">
+	<link rel="stylesheet" type="text/css" href="../stylemodify.css">
 </head>
 <body>
 	<div class="header">
@@ -26,6 +26,10 @@
 		<div class="input-group">
 			<label>Category</label>
 			<input type="category" name="category" value="<?php echo $category; ?>">
+		</div>
+		<div class="input-group">
+			<label>Image</label>
+			<input type="file" name="image" value="<?php echo $image; ?>">
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="reg_user">Register</button>
