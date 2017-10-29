@@ -5,8 +5,10 @@ session_start();
 $artname = "";
 $cost = "";
 $category = "";
+$image = "";
 $errors = array(); 
 $_SESSION['success'] = "";
+$tanmay = 'tanmay sankhe';
 
 // connect to database
 $db = mysqli_connect('localhost', 'root', '', 'artdatabase');
@@ -17,24 +19,27 @@ if (isset($_POST['reg_user'])) {
 	$artname = mysqli_real_escape_string($db, $_POST['artname']);
 	$cost = mysqli_real_escape_string($db, $_POST['cost']);
 	$category = mysqli_real_escape_string($db, $_POST['category']);
-	
+	$image = mysqli_real_escape_string($db, $_POST['image']); 
+
 	// form validation: ensure that the form is correctly filled
 	if (empty($artname)) { array_push($errors, "artname is required"); }
 	if (empty($cost)) { array_push($errors, "cost is required"); }
 	if (empty($category)) { array_push($errors, "category is required"); }
+	if (empty($image)) { array_push($errors, "image is required"); }
 		
 
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
 	
-		$query = "INSERT INTO user(artname,cost,category) 
-				  VALUES('$artname','$cost','$category')";
+		$query = "INSERT INTO user(artname,cost,category,image) 
+				  VALUES('$artname','$cost','$category','$image')";
 		mysqli_query($db, $query);
 
 		$_SESSION['artname'] = $artname;
 		$_SESSION['success'] = "You are now logged in";
-		header('location: index100.php');
-	}
+		header('location: painting50.php');
+		echo "upload success";
+		}
 
 }
 
