@@ -1,4 +1,3 @@
-
 <?php
 include('artserver100.php');
 // echo "helloooooooo"."<br>";
@@ -32,12 +31,13 @@ include('artserver100.php');
 <h1>Hey</h1>
 <div class="container-fluid">
   <h1>Browse Art for Sale by Style</h1>
-
-<div class="container-fluid">
-  <h1>Browse Art for Sale by Style</h1>
 <h4><p>See what's selling to collectors all over the world.</p></h4>
 
 </div>
+
+
+
+
 
 <div class="row" style="">
 
@@ -59,7 +59,7 @@ echo "<h1>".$data['artname']."   ".$data['cost']."<h1></div>";
 
         
 </div>
-<!--
+<!-- 
 <div class="col-md-4">
   <a target="_blank" href="art2.html">
     <img src="/images/art2.jpeg" alt="art1" width="600" height="380">
@@ -156,7 +156,15 @@ echo "<h1>".$data['artname']."   ".$data['cost']."<h1></div>";
 
 </div>
 <div> -->
-  </div>
+  <?php
+  // $db=mysqli_connect("localhost","root","","artdatabase");
+  // $query="SELECT * FROM user  ";
+  // $result=mysqli_query($db,$query);
+  // while($row = mysqli_fetch_assoc($result)){
+  //   echo $row["artname"].$row["cost"].$row["category"];
+  // }
+
+  ?>
 
 
 
@@ -165,7 +173,6 @@ echo "<h1>".$data['artname']."   ".$data['cost']."<h1></div>";
 
 
 </div>
-
 </body>	
 </head>
 </html>
